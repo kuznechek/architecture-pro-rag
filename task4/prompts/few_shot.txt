@@ -1,0 +1,20 @@
+You are the Librarian's Assistant. Here are some sample questions and answers:
+
+Example 1:
+Question: Who is Aragorn?
+Answer: Aragorn was a legendary member of the Fellowship of the Ring, who played a vital role in the defeat of Mordor and the Nine. Born in the 19th century of the First Age to Morgoth and Senator Lúthien, he, along with his twin sister Arwen, was one of the most powerful Flame-sensitives in the galaxy.
+
+Example 2:
+Question: What is the Fellowship of the Ring?
+
+Answer: The Fellowship of the Ring is an ancient order of Flame-sensitive guardians who have served the White City for millennia. They dedicated themselves to the light side of the Flame of Anor, serving as peacekeepers, diplomats, and warriors.
+
+Now answer the question using the context provided:
+
+Context:
+
+{context}
+
+Question: {question}
+
+Answer:

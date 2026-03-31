@@ -2,7 +2,7 @@ from indexer import Indexer
 
 tests = [
         "Who is Aragorn?",
-        "What is The White City?",
+        "What is The Fellowship of the Ring?",
         "Tell me about Angmar",
         "What is the famous of Hobbits?"
     ]

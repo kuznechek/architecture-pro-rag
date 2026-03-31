@@ -45,6 +45,68 @@ python find_index.py
 
 # Задание 4. Реализация RAG-бота с техниками промптинга
 
+Загрузка модели llama3.1 :
+
+```
+docker exec ollama ollama pull llama3.1
+
+```
+
+Для запуска бота :
+
+```
+docker-compose up -d
+
+```
+
+Посмотреть лог бота :
+
+```
+docker logs -f rag-bot
+
+```
+
+Проверить сервис :
+
+```
+Invoke-RestMethod http://localhost:8001/health
+Invoke-RestMethod http://localhost:8001/test
+
+```
+
+![Запросы](https://github.com/kuznechek/architecture-pro-rag/blob/rag/task4/src/test_query.png)
+
+Лог:
+
+![Лог](https://github.com/kuznechek/architecture-pro-rag/blob/rag/task4/src/test_log.png)
+
+## BASE
+
+```
+Invoke-RestMethod -Uri http://localhost:8001/ask -Method Post -ContentType "application/json" -Body '{"question": "Who is Sauron?", "prompt_type": "base"}'
+
+```
+
+![Запрос](https://github.com/kuznechek/architecture-pro-rag/blob/rag/task4/src/base_answer.png)
+
+## FEW SHOT
+
+```
+Invoke-RestMethod -Uri http://localhost:8001/ask -Method Post -ContentType "application/json" -Body '{"question": "Who is Sauron?", "prompt_type": "few_shot"}'
+
+```
+
+![Запрос](https://github.com/kuznechek/architecture-pro-rag/blob/rag/task4/src/few_shot_answer.png)
+
+## COT
+
+```
+Invoke-RestMethod -Uri http://localhost:8001/ask -Method Post -ContentType "application/json" -Body '{"question": "Who is Sauron?", "prompt_type": "cot"}'
+
+```
+
+![Запрос](https://github.com/kuznechek/architecture-pro-rag/blob/rag/task4/src/cot_answer.png)
+
 # Задание 5. Запуск и демонстрация работы бота
 
 # Задание 6. Автоматическое ежедневное обновление базы знаний

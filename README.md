@@ -142,4 +142,37 @@ Invoke-RestMethod -Uri http://localhost:8001/ask -Method Post -ContentType "appl
 
 # Задание 6. Автоматическое ежедневное обновление базы знаний
 
+**Источник данных :** [The Chronicles of Narnia Wiki](https://narnia.fandom.com/wiki/Category:Characters)
+
+**Класс обновления индекса :** [KnowledgeBaseUpdater](https://github.com/kuznechek/architecture-pro-rag/blob/rag/task6/KnowledgeBaseUpdater.py)
+
+**Расписание обновлений:**
+
+Обновление происходит раз в минуту
+
+```
+* * * * * root cd /app && /usr/local/bin/python /app/main.py >> /var/log/rag-updater/update.log 2>&1
+
+```
+
+[crontab.txt](https://github.com/kuznechek/architecture-pro-rag/blob/rag/task6/crontab.txt)
+
+**Шаги для запуска обновления :**
+
+```
+docker-compose up -d
+```
+```
+docker ps | grep rag-updater
+```
+```
+docker exec rag-updater python /app/main.py
+```
+
+**Проверка автоматического обновления :**
+
+```
+docker exec rag-updater crontab -l
+```
+
 # Задание 7. Аналитика покрытия и качества базы знаний

@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  rag-updater:
+    build:
+      context: .
+    container_name: rag-updater
+    volumes:
+      - ./faiss_db:/app/faiss_db
+      # - ./cache:/root/.cache
+      # - ./logs:/var/log/rag-updater
+    environment:
+      - HF_HOME=/root/.cache/huggingface
+    restart: always

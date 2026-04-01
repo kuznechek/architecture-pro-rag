@@ -1,6 +1,6 @@
 # Задание 1. Исследование моделей и инфраструктуры
 
-[Исследование моделей и инфраструктуры](https://github.com/kuznechek/architecture-pro-rag/blob/rag/task1.md)
+[Исследование моделей и инфраструктуры](https://github.com/kuznechek/architecture-pro-rag/blob/rag/task1/task1.md)
 
 # Задание 2. Подготовка базы знаний
 

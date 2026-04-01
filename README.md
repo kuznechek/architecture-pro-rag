@@ -176,3 +176,9 @@ docker exec rag-updater crontab -l
 ```
 
 # Задание 7. Аналитика покрытия и качества базы знаний
+
+**Удалённые сущности :**
+
+- Gandalf
+- Mordor
+- The War of The Ring

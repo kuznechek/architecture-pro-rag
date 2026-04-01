@@ -1,0 +1,46 @@
+[
+  {
+    "question": "Who is Pippin?",
+    "category": "known"
+  },
+  {
+    "question": "Tell me about Arwen.",
+    "category": "known"
+  },
+  {
+    "question": "What is Saruman known for?",
+    "category": "known"
+  },
+  {
+    "question": "Describe Moria.",
+    "category": "known"
+  },
+  {
+    "question": "What is Fangorn Forest?",
+    "category": "known"
+  },
+  {
+    "question": "Who is Gollum?",
+    "category": "known"
+  },
+  {
+    "question": "What is the significance of Shadowfax?",
+    "category": "known"
+  },
+  {
+    "question": "Tell me about Samwise Gamgee.",
+    "category": "known"
+  },
+  {
+    "question": "Who is Gendalf?",
+    "category": "absent"
+  },
+  {
+    "question": "What is Mordor?",
+    "category": "absent"
+  },
+  {
+    "question": "Explain The War of the Ring.",
+    "category": "absent"
+  }
+]

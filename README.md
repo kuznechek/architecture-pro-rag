@@ -190,6 +190,16 @@ docker exec rag-updater python /app/main.py
 docker exec rag-updater crontab -l
 ```
 
+## Архитектурная диаграммаа
+
+Ниже представлена диаграмма, отражающая реальные компоненты класса KnowledgeBaseUpdater и поток данных от Fandom API до сохранения FAISS индекса.
+
+Планировщик показан как внешний триггер, так как класс не включает его самостоятельно.
+
+![architecture.png](https://github.com/kuznechek/architecture-pro-rag/blob/rag/task6/architecture.png)
+
+[architecture.puml](https://github.com/kuznechek/architecture-pro-rag/blob/rag/task6/architecture.puml)
+
 # Задание 7. Аналитика покрытия и качества базы знаний
 
 **Удалённые сущности :**

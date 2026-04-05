@@ -1,0 +1,46 @@
+@startuml
+!theme materia-outline
+title Architecture of Daily Knowledge Base Update (KnowledgeBaseUpdater)
+
+rectangle "Data Source" as source {
+  file "Fandom API\n(Narnia)" as api
+  note right of api : Category:Characters
+}
+
+rectangle "Scheduler" as scheduler {
+  artifact "Cron / Airflow\n(daily at 02:00)" as cron
+}
+
+rectangle "KnowledgeBaseUpdater" as updater {
+  component "_fetch_category_pages" as fetchCat
+  component "_fetch_page_content" as fetchPage
+  component "_load_documents" as loadDocs
+  component "_split_documents" as splitDocs
+  component "_build_faiss_db" as buildFaiss
+  component "BeautifulSoup\n(clean HTML)" as soup
+  component "RecursiveCharacterTextSplitter\n(chunk_size=1000, overlap=100)" as splitter
+  component "HuggingFaceEmbeddings\n(model: all-MiniLM-L6-v2)" as embedder
+}
+
+database "Local Storage" as storage {
+  file "faiss_db/\n(FAISS index + metadata)" as faiss
+}
+
+cron --> updater : trigger run()
+api --> fetchCat : get category members
+fetchCat --> fetchPage : for each title
+fetchPage --> soup : parse HTML
+soup --> loadDocs : create Document objects
+loadDocs --> splitDocs : list of docs
+splitDocs --> splitter : split into chunks
+splitter --> buildFaiss : list of chunks
+buildFaiss --> embedder : compute embeddings
+embedder --> faiss : save index locally
+
+note right of updater
+  The run() method executes
+  the full pipeline.
+  Logging is internal (no separate block).
+end note
+
+@enduml

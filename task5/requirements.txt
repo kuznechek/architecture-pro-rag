@@ -1,0 +1,10 @@
+langchain-huggingface
+langchain-community
+langchain-ollama
+faiss-cpu
+sentence-transformers
+torch
+tqdm
+fastapi
+uvicorn
+pydantic

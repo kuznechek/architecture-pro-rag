@@ -1,0 +1,7 @@
+requests
+beautifulsoup4
+tqdm
+langchain
+langchain-community
+faiss-cpu
+sentence-transformers
